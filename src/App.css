@@ -5,19 +5,41 @@
 
 .App-header {
   background-color: rgb(169, 139, 186);
-  /* min-height: 100vh; */
   display: flex;
   flex-direction: column;
   align-items: center;
-  /* justify-content: center; */
-  font-size: calc(10px + 2vmin);
+  font-size: calc(15px + 2vmin);
   color: white;
+  font-weight: bold;
+}
+
+.todo-list {
+  display: flex;
+}
+
+.ant-list {
+  width: 30vw;
+  margin: 1em;
+  min-width: 250px;
+  border-radius: 4em;
+  border-color: black;
+  
+ 
+}
+
+.new-task-button {
+  position: absolute;
+  bottom: 20px;
+  justify-content: center;
+  
+
+  
 }
 
 
 Footer {
-background-color: whitesmoke;
-text-align: center;
-position: absolute;
-bottom: 0;
+  background-color: whitesmoke;
+  text-align: center;
+  position: absolute;
+  bottom: 0;
 }

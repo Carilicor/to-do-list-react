@@ -1,5 +1,7 @@
-import { useState } from 'react';
+import React, { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
+
+
 
 export default function AddTask() {
   const navigate = useNavigate()
@@ -49,68 +51,3 @@ export default function AddTask() {
   )
 
 }
-// import { Button, Form, Input, Select } from 'antd';
-
-
-
-// const { Option } = Select;
-// const layout = { labelCol: { span: 8, }, wrapperCol: { span: 16, }, };
-// const tailLayout = { wrapperCol: { offset: 8, span: 16, }, };
-// const App = () => {
-//   const [form] = Form.useForm();
-//   const onCategoryChange = (value) => {
-//     switch (value) { }
-//   };
-//   const onFinish = (values) => {
-//     console.log(values);
-//   };
-//   const onReset = () => {
-//     form.resetFields();
-//   };
-//   return (
-//     <Form {...layout} form={form} name="control-hooks" onFinish={onFinish}>
-//       <Form.Item
-//         name="category"
-//         label="Category"
-//         rules={[
-//           {
-//             required: true,
-//           },
-//         ]}
-//       >
-//         <Select
-//           placeholder="Select a option and change input text above"
-//           onChange={onCategoryChange}
-//           allowClear
-//         >
-//           <Option value="my list">My List</Option>
-//           <Option value="my monsters">My Monsters</Option>
-//           <Option value="my home">My Home</Option>
-//         </Select>
-//       </Form.Item>
-//       <Form.Item
-//         name="to-do-task"
-//         label="To Do Task"
-//         rules={[
-//           {
-//             required: true,
-//           },
-//         ]}
-//       >
-//         <Input />
-//       </Form.Item>
-//       <Form.Item {...tailLayout}>
-//         <Button type="primary" htmlType="submit">
-//           Submit
-//         </Button>
-//         <Button htmlType="button" onClick={onReset}>
-//           Reset
-//         </Button>
-//       </Form.Item>
-//     </Form>
-//   );
-// };
-// export default App;
-
-
-
