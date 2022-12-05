@@ -15,7 +15,8 @@ export default function AddTask() {
       return
     }
     const newTask = { category, dueDate, task }
-    fetch('https://to-do-list-cgl.web.app/tasks', {
+    // fetch('https://to-do-list-cgl.web.app/tasks', {
+    fetch('http://127.0.0.1:5002/tasks', {
       method: 'POST',
       headers: { 'Content-Type': 'application/json' },
       body: JSON.stringify(newTask)

@@ -3,6 +3,7 @@ import { Link } from "react-router-dom";
 import { useState, useEffect } from 'react';
 import { List, Button, Space } from 'antd'
 import ListCard from './ListCard.jsx'
+import "../App.css"
 
 
 
@@ -10,7 +11,8 @@ import ListCard from './ListCard.jsx'
 export default function TodoList() {
     const [tasks, setTasks] = useState()
     useEffect(() => {
-        fetch('https://to-do-list-cgl.web.app/tasks')
+        //fetch('https://to-do-list-cgl.web.app/tasks')
+        fetch('http://127.0.0.1:5002/tasks')
             .then(res => res.json())
             .then(data => {
                 console.log(data)
@@ -23,13 +25,14 @@ export default function TodoList() {
         return <h1>Loading...</h1>
     }
 
-    const meList = tasks.filter(item => item.category?.toLowerCase() === "me")
-    const monsterList = tasks.filter(item => item.category?.toLowerCase() === "my monsters")
-    const homeList = tasks.filter(item => item.category?.toLowerCase() === "home")
+    const meList = tasks?.filter(item => item.category?.toLowerCase() === "me")
+    const monsterList = tasks?.filter(item => item.category?.toLowerCase() === "my monsters")
+    const homeList = tasks?.filter(item => item.category?.toLowerCase() === "home")
 
 
     return (
         <main className='todo-list'>
+            <div className="listItemsContainer">
             <List
                 header={<h2>Me</h2>}
                 bordered
@@ -51,12 +54,15 @@ export default function TodoList() {
                 renderItem={(item) => (
                     <ListCard task={item} />
                 )} />
+</div>
+            <div className='Div'>
 
-            <Link className="new-task-button" to='/add'> 
-                <Space wrap>
+            <Link className="new-task-button" to='/add' style={{ width: 500, }}> 
+            <div className="buttonContainer">
                     <Button type="primary">New Task</Button>
-                </Space>
+                    </div>
             </Link>
+            </div>
         </main>
     )
 }
