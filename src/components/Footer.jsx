@@ -4,7 +4,7 @@
 export default function Footer() {
   return (
     <footer>
-      {/* <div>Copyrights © 2022 Cari Licor </div> */}
+      <div className="footer">Copyrights © 2022 All Rights Reserved </div>
     </footer>
   )
 }

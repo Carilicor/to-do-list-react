@@ -2,17 +2,17 @@ import { Button, Form, Input, Layout } from 'antd'
 
 export default function Profile(user, token) {
     const handleProfileUpdate = (values) => {
-        fetch(`http://127.0.0.1:5002/users/${user.id}`, {
-        method: 'PATCH',
-        headers: {
-            'Content-Type': 'application/json',
-            'Authorization': token,
-        },
-        body: JSON.stringify(values),
+        fetch(`https://to-do-list-cgl.web.app/users/${user.id}`, {
+            method: 'PATCH',
+            headers: {
+                'Content-Type': 'application/json',
+                'Authorization': token,
+            },
+            body: JSON.stringify(values),
         })
-        .then(response => response.json())
-        .then(() => alert('Profile Updated'))
-        .catch(alert)
+            .then(response => response.json())
+            .then(() => alert('Profile Updated'))
+            .catch(alert)
     }
     return (
         <Layout.Content style={{ padding: '50px' }}>

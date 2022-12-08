@@ -10,18 +10,30 @@
   align-items: center;
   font-size: calc(15px + 2vmin);
   color: white;
-  
+
 }
 
-.listItemsContainer{
+.background-img {
+  background-image: url("https://media.istockphoto.com/id/1312771025/photo/pile-of-clothes-on-bed-in-messy-room-fast-fashion-concept.jpg?s=612x612&w=is&k=20&c=PHyL_zNXGD66W4hhkJkDc_Pz9Zc4f-dMbIoKvgN_2Jo=");
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  height: 100%;
+  width: 100%;
+}
+
+.listItemsContainer {
   width: 100%;
   display: flex;
   flex-wrap: wrap;
+  justify-content: center;
+  align-items: inherit;
 }
 
 .todo-list {
   display: flex;
   flex-direction: column;
+  background-color: rgb(169, 139, 186);
 }
 
 .ant-list {
@@ -30,8 +42,12 @@
   min-width: 250px;
   border-radius: 4em;
   border-color: black;
-  
- 
+
+
+}
+
+.list-cross {
+  text-decoration: line-through;
 }
 
 
@@ -39,13 +55,33 @@
 Footer {
   background-color: whitesmoke;
   text-align: center;
-  position: absolute;
   bottom: 0;
+  flex-wrap: wrap;
 }
-.buttonContainer{
-  
+
+.buttonContainer {
   align-items: center;
   display: flex;
   justify-content: center;
 
+}
+
+.login-container {
+  background-color: rgb(173, 123, 229);
+  width: 250px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  margin: auto;
+  color: white;
+  border: solid rgb(12, 5, 5);
+  box-shadow: rgba(9, 5, 5, 0.605) 0px 3px 8px;
+}
+
+.loginMainContainer {
+  height: 85vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
