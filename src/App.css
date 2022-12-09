@@ -85,3 +85,8 @@ Footer {
   justify-content: center;
   align-items: center;
 }
+
+.header {
+  background-color: rgb(169, 139, 186);
+  margin-bottom: 5px;
+}

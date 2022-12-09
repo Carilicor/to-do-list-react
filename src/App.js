@@ -8,6 +8,7 @@ import AddTask from './components/AddTask.jsx';
 import ToDoList from './components/ToDoList.jsx';
 import Login from './security/Login.jsx'
 import Profile from './security/Profile.jsx'
+import Signup from './security/Signup';
 
 
 
@@ -17,16 +18,17 @@ export default function App() {
   const [token, setToken] = useState()
   return (
     <>
-      <Header />
       <BrowserRouter>
+        <Header />
         <Routes>
           {user
             ? <Route path='/profile' element={<Profile token={token} setUser={setUser} user={user} />} />
             : <>
               <Route path='/' element={<Login setToken={setToken} setUser={setUser} />} />
+              <Route path='/new' element={<Signup setToken={setToken} setUser={setUser} />} />
             </>
           }
-          <Route path='/' element={<ToDoList />} />
+          <Route path='/list' element={<ToDoList />} />
           <Route path='/add' element={<AddTask />} />
 
         </Routes>

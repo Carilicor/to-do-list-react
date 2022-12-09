@@ -4,15 +4,17 @@ import { useState, useEffect } from 'react';
 import { List, Button } from 'antd'
 import ListCard from './ListCard.jsx'
 import "../App.css"
+import { useNavigate } from 'react-router-dom'
 
 
 
 
 export default function TodoList() {
     const [tasks, setTasks] = useState()
+    const navigate = useNavigate()
     useEffect(() => {
         fetch('https://to-do-list-cgl.web.app/tasks')
-        //fetch('http://127.0.0.1:5002/tasks')
+
             .then(res => res.json())
             .then(data => {
                 setTasks(data)
@@ -61,6 +63,7 @@ export default function TodoList() {
                         <Button type="primary">New Task</Button>
                     </div>
                 </Link>
+                <button type="primary" htmlType='submit' onClick={() => navigate('/')}>Logout</button>
             </div>
         </main>
     )

@@ -1,7 +1,8 @@
 import { Button, Form, Input, Layout } from 'antd'
-
+import { useNavigate } from 'react-router-dom'
 
 export default function Login({ setUser, setToken }) {
+    const navigate = useNavigate()
     const handleFormSubmit = (values) => {
         console.log('Success:', values)
         fetch('https://to-do-list-cgl.web.app/login', {
@@ -35,9 +36,12 @@ export default function Login({ setUser, setToken }) {
                             <Input.Password />
                         </Form.Item>
                         <Form.Item wrapperCol={{ span: 16, offset: 8 }}>
-                            <Button type='primary' htmlType='submit'>Login</Button>
+                            <Button type='primary' htmlType='submit' onClick={() => navigate('/list')}>Login</Button>
                         </Form.Item>
                     </Form>
+                    <br /><br />
+                    Don't have an account?
+                    <button onClick={() => navigate('/new')}>Sign up</button>
                 </Layout.Content>
             </div>
         </div>
